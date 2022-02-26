@@ -1,0 +1,36 @@
+<div class="main">
+   
+  <div [formGroup]="addForm" class="form">
+    <button class="list-dragons" routerLink="/dragons">Ver dragões</button>
+    <h1>Adicione um dragão</h1>
+
+    <div class="field">
+      <label for="dragonName">Nome do dragão</label>
+      <input type="text" name="dragonName" formControlName="name" />
+      <span
+        *ngIf="addForm.controls.name.errors && !addForm.controls.name.pristine"
+        >Nome de usuário é obrigatório!</span
+      >
+    </div>
+
+    <div class="field">
+      <label for="type">Tipo</label>
+      <input type="text" name="type" formControlName="type" />
+      <span
+        *ngIf="addForm.controls.type.errors && !addForm.controls.type.pristine"
+        >Nome de usuário é obrigatório!</span
+      >
+    </div>
+
+    <div class="button">
+      <button
+        type="button"
+        (click)="addDragon()"
+        [disabled]="addForm.invalid"
+        [ngClass]="{ 'disabled-button': addForm.invalid }"
+      >
+        Adicionar
+      </button>
+    </div>
+  </div>
+</div>
