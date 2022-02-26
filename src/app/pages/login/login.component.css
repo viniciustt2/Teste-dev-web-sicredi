@@ -9,10 +9,6 @@
   background-size: cover;
 }
 
-.disabled-button {
-  background-color: rgb(121, 193, 202);
-}
-
 .form {
   height: 350px;
   width: 350px;
@@ -27,10 +23,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.button {
-  text-align: center;
 }
 
 .login-error {

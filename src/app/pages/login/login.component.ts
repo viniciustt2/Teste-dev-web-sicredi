@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loginErrorMessage:string = '';
+  loginErrorMessage: string = '';
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.loginForm = this.fb.group({
@@ -20,28 +20,20 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  
-  checkInvalidForm():boolean {
+  checkInvalidForm(): boolean {
     return this.loginForm.invalid;
   }
 
-  login():void {
-    console.log(this.loginForm);
-    
+  login(): void {
     if (this.checkInvalidForm()) {
       return;
     }
     this.authService.login(this.loginForm.value).subscribe(
-      (res) => console.log(res),
+      (res) => {},
       (error) => {
-        this.loginErrorMessage = error.message
+        this.loginErrorMessage = error.message;
         console.log(this.loginErrorMessage);
-        
       }
     );
-    // if (this.authService.isLogged()) {
-    //   this.router.navigate(['/dragons']);
-    // }
   }
-
 }
