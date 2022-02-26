@@ -1,0 +1,34 @@
+<div class="main">
+  <div class="dragons-table">
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Opções</th>
+      </tr>
+
+      <tbody *ngIf="(dragons$ | async)?.length !== 0 as dragons">
+        <tr *ngFor="let dragon of dragons$ | async">
+          <td>{{ dragon.id }}</td>
+          <td>{{ dragon.name }}</td>
+          <td>
+            <div class="options">
+              <a class="remove-button" (click)="deleteDragon(dragon)"
+                >Remover</a
+              >
+              <a class="edit-button">Alterar</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody *ngIf="(dragons$ | async)?.length === 0">
+        <tr>
+          <td >Nenhum dragão cadastrado.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button routerLink="add-dragon">Adicionar Dragão</button>
+</div>
