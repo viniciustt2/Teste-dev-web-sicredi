@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { AddDragonsComponent } from './add-dragons.component';
 
@@ -8,9 +10,10 @@ describe('AddDragonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddDragonsComponent ]
-    })
-    .compileComponents();
+      declarations: [AddDragonsComponent],
+      providers: [FormBuilder],
+      imports: [StoreModule.forRoot({})],
+    }).compileComponents();
   });
 
   beforeEach(() => {

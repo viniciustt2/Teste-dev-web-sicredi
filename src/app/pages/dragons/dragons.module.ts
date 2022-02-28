@@ -7,16 +7,15 @@ import { AddDragonsComponent } from './add-dragons/add-dragons.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { dragonsReducer } from 'src/app/store/dragons.state';
-import { DragonsEffectService } from 'src/app/store/dragons.effect.service';
-
+import { EditDragonsComponent } from './edit-dragons/edit-dragons.component';
+import { DetailDragonComponent } from './detail-dragon/detail-dragon.component';
 
 @NgModule({
   declarations: [
     ListDragonsComponent,
-    AddDragonsComponent
+    AddDragonsComponent,
+    EditDragonsComponent,
+    DetailDragonComponent,
   ],
   imports: [
     CommonModule,
@@ -24,9 +23,6 @@ import { DragonsEffectService } from 'src/app/store/dragons.effect.service';
     RouterModule,
     ReactiveFormsModule,
     SharedModule,
-    
-    StoreModule.forRoot({dragons:dragonsReducer }),
-    EffectsModule.forRoot([DragonsEffectService]),
-  ]
+  ],
 })
-export class DragonsModule { }
+export class DragonsModule {}

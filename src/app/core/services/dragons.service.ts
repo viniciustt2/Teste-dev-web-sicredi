@@ -16,8 +16,16 @@ export class DragonsService {
     return this.http.get<IDragon[]>(this.base_url);
   }
 
+  getDragon(id:string):Observable<IDragon> {
+    return this.http.get<IDragon>(`${this.base_url}/${id}`);
+  }
+
   addDragon(dragon: IDragon):Observable<IDragon> {
     return this.http.post<IDragon>(this.base_url, dragon);
+  }
+
+  editDragon(dragon: IDragon){
+    return this.http.put<IDragon>(`${this.base_url}/${dragon.id}`, dragon);
   }
 
   deleteDragon(id: string):Observable<IDragon> {

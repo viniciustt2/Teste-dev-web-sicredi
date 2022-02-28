@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="nav">
+    <input
+      type="checkbox"
+      [checked]="isMenuOpen"
+      (click)="toggleMenu()"
+      id="nav-check"
+    />
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+
+    <div class="nav-links">
+      <a (click)="listDragons()"> Listar Dragões </a>
+      <a (click)="addDragon()"> Adicionar Dragão</a>
+      <a (click)="logOut()">Sair</a>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <ng-content></ng-content>
+</div>

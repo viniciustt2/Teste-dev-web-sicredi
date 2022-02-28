@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { SortPipe } from './pipes/sort.pipe';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [SpinnerComponent, SortPipe],
-  imports: [CommonModule],
-  exports: [SpinnerComponent, SortPipe],
+  declarations: [SpinnerComponent, NavbarComponent],
+  imports: [CommonModule, RouterModule, FormsModule],
+  exports: [SpinnerComponent, NavbarComponent],
 })
 export class SharedModule {}

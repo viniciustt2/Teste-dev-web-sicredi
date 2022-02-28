@@ -1,7 +1,5 @@
 <div class="main">
-   
   <div [formGroup]="addForm" class="form">
-    <button class="list-dragons" routerLink="/dragons">Ver dragões</button>
     <h1>Adicione um dragão</h1>
 
     <div class="field">
@@ -9,7 +7,7 @@
       <input type="text" name="dragonName" formControlName="name" />
       <span
         *ngIf="addForm.controls.name.errors && !addForm.controls.name.pristine"
-        >Nome de usuário é obrigatório!</span
+        >Nome do dragão é obrigatório!</span
       >
     </div>
 
@@ -18,7 +16,7 @@
       <input type="text" name="type" formControlName="type" />
       <span
         *ngIf="addForm.controls.type.errors && !addForm.controls.type.pristine"
-        >Nome de usuário é obrigatório!</span
+        >Tipo do dragão é obrigatório!</span
       >
     </div>
 

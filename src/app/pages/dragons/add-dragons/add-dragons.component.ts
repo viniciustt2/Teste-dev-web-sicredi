@@ -14,8 +14,8 @@ export class AddDragonsComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private spinnerService: SpinnerService,
-    private store: Store<{ dragons: IDragonsState }>
+    private store: Store<{ dragons: IDragonsState }>,
+    private spinnerService: SpinnerService
   ) {
     this.addForm = this.fb.group({
       name: [null, Validators.required],
@@ -25,7 +25,9 @@ export class AddDragonsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addDragon() {
+  addDragon(): void {
+    this.spinnerService.on();
+
     const dragon = {
       name: this.addForm.value.name,
       type: this.addForm.value.type,

@@ -1,0 +1,36 @@
+<div class="main">
+   
+    <div [formGroup]="editForm" class="form">
+      <h1>Edite um dragão</h1>
+  
+      <div class="field">
+        <label for="dragonName">Nome do dragão</label>
+        <input type="text" name="dragonName" formControlName="name" />
+        <span
+          *ngIf="editForm.controls.name.errors && !editForm.controls.name.pristine"
+          >Nome do dragão é obrigatório!</span
+        >
+      </div>
+  
+      <div class="field">
+        <label for="type">Tipo</label>
+        <input type="text" name="type" formControlName="type" />
+        <span
+          *ngIf="editForm.controls.type.errors && !editForm.controls.type.pristine"
+          >Tipo do dragão é obrigatório!</span
+        >
+      </div>
+  
+      <div class="button">
+        <button
+          type="button"
+          (click)="editDragon()"
+          [disabled]="editForm.invalid"
+          [ngClass]="{ 'disabled-button': editForm.invalid }"
+        >
+          Editar
+        </button>
+      </div>
+    </div>
+  </div>
+  

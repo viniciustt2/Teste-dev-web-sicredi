@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="form">
+    <h1>Detalhes do dragão</h1>
+    <ul *ngIf="dragon$ | async as dragon">
+      <li>
+        <b> Data de criação: </b>
+        {{ dragon.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}
+      </li>
+      <li><b> Nome: </b>{{ dragon.name }}</li>
+      <li><b> Tipo: </b>{{ dragon.type }}</li>
+    </ul>
+  </div>
+</div>

@@ -1,22 +1,27 @@
 <div class="main">
+  
+  <h1>Lista de dragões</h1>
   <div class="dragons-table">
     <table>
       <tr>
         <th>Id</th>
         <th>Nome</th>
+        <th>Tipo</th>
         <th>Opções</th>
       </tr>
-
-      <tbody *ngIf="(dragons$ | async)?.length !== 0 as dragons">
-        <tr *ngFor="let dragon of dragons$ | async">
+      
+      <tbody *ngIf="dragons$ | async as dragons;">
+        <tr *ngFor="let dragon of dragons">
           <td>{{ dragon.id }}</td>
           <td>{{ dragon.name }}</td>
+          <td>{{ dragon.type }}</td>
           <td>
             <div class="options">
               <a class="remove-button" (click)="deleteDragon(dragon)"
                 >Remover</a
               >
-              <a class="edit-button">Alterar</a>
+              <a class="edit-button" (click)="editDragon(dragon)">Alterar</a>
+              <a class="detail-button" (click)="detailDragon(dragon)">Detalhar</a>
             </div>
           </td>
         </tr>
@@ -29,6 +34,4 @@
       </tbody>
     </table>
   </div>
-
-  <button routerLink="add-dragon">Adicionar Dragão</button>
 </div>
