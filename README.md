@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Dragons
 
 # Usuário básico
-login: admin
-senha: 123456
+- login: admin
+- senha: 123456
 
 ## Development server
 
