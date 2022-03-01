@@ -18,6 +18,8 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+      console.log(this.authService.isUserLogged());
+      
     return this.authService.isUserLogged();
   }
 

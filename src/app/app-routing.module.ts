@@ -3,11 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-
   {
-    path:'',
-    redirectTo:'/login',
-    pathMatch:'full'
+    path: '',
+    redirectTo: '/dragons',
+    pathMatch: 'full',
   },
   {
     path: 'login',
@@ -18,7 +17,7 @@ const routes: Routes = [
     path: 'dragons',
     loadChildren: () =>
       import('./pages/dragons/dragons.module').then((m) => m.DragonsModule),
-      canLoad:[AuthGuard]
+    canLoad: [AuthGuard],
   },
 ];
 

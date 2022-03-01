@@ -34,6 +34,10 @@ export class AuthService {
   }
 
   isUserLogged(): boolean {
-    return !!localStorage.getItem('loggedUser');
+    if (!localStorage.getItem('loggedUser')) {
+      this.router.navigateByUrl('/login');
+      return false;
+    }
+    return  true;
   }
 }

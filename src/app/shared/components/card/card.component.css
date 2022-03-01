@@ -1,0 +1,39 @@
+.card {
+  background-color: rgba(240, 255, 255, 0.6);
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+  border-radius: 5px;
+  height: 350px;
+  width: 550px;
+  padding: 20px;
+}
+
+@media (min-width: 280px) {
+  .card {
+    width: 250px;
+  }
+}
+
+@media (min-width: 576px) {
+  .card {
+    width: 350px;;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 450px;;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    width: 550px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    width: 650px;
+  }
+}

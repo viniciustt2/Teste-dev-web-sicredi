@@ -1,28 +1,32 @@
 
 <div class="login">
-    <div [formGroup]="loginForm" class="form">
-        <h1>Login</h1>
-        <label for="userName">Nome de usuário</label>
-        <div class="field">
-         
-            <input type="text" name="userName" formControlName="userName">
-            <span *ngIf="loginForm.controls.userName.errors && !loginForm.controls.userName.pristine">Nome de usuário é obrigatório!</span>
-        </div>
-        
-        <label for="password">Senha</label>
-        <div class="field">
-            <input type="password" name="password" formControlName="password">
-            <span *ngIf="loginForm.controls.password.errors && !loginForm.controls.password.pristine">Senha é obrigatório!</span>
-        </div>
-       
-        <div  *ngIf="loginErrorMessage" class="login-error">
-            <span >{{loginErrorMessage}}</span>
-        </div>
-        
-        <div class="button">
-            <button type="button" (click)="login()" [disabled]="loginForm.invalid" [ngClass]="{'disabled-button': loginForm.invalid}">Login</button>
-        </div>
-        
-    </div>
 
+    <app-card>
+        <div [formGroup]="loginForm">
+            <h1>Login</h1>
+            <label for="userName">Nome de usuário</label>
+            <div class="field">
+             
+                <input type="text" name="userName" formControlName="userName">
+                <span *ngIf="loginForm.controls.userName.errors && !loginForm.controls.userName.pristine">Nome de usuário é obrigatório!</span>
+            </div>
+            
+            <label for="password">Senha</label>
+            <div class="field">
+                <input type="password" name="password" formControlName="password">
+                <span *ngIf="loginForm.controls.password.errors && !loginForm.controls.password.pristine">Senha é obrigatório!</span>
+            </div>
+           
+            <div  *ngIf="loginErrorMessage" class="login-error">
+                <span >{{loginErrorMessage}}</span>
+            </div>
+            
+            <div class="button">
+                <button type="button" (click)="login()" [disabled]="loginForm.invalid" [ngClass]="{'disabled-button': loginForm.invalid}">Login</button>
+            </div>
+            
+        </div>
+    
+    </app-card>
+  
 </div>
